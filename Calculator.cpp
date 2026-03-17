@@ -25,7 +25,7 @@ namespace Calculator {
     double Mod(double First, double Second) {
         return fmod(First, Second);
     }
-    void PrintAsnwer(int Result) {
+    void PrintAsnwer(double Result) {
         cout << "The Asnwer is " << Result << std::endl;
     }
 }
@@ -50,7 +50,11 @@ int main() {
         } else if (Opeartor == "*") {
             PrintAsnwer(Mutiply(FirstNumber, SecondNumber));
         } else if (Opeartor == "/") {
-            PrintAsnwer(Divide(FirstNumber, SecondNumber));
+            if (SecondNumber == 0) {
+                std::cout << "You cannot divide a number by 0.";
+            } else {
+                PrintAsnwer(Divide(FirstNumber, SecondNumber));
+            }
         } else if (Opeartor == "%") {
             PrintAsnwer(Mod(FirstNumber, SecondNumber));
         } else if (Opeartor == "^") {
